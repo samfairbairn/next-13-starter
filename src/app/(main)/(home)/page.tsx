@@ -1,4 +1,12 @@
-import { GSAPBlock, Parallax, ScrollBlock, SlidingTitle, SlowBlock, Sticky } from "@/components"
+import {
+  GSAPBlock,
+  Marquee,
+  Parallax,
+  ScrollBlock,
+  SlidingTitle,
+  SlowBlock,
+  Sticky,
+} from "@/components"
 import { Metadata } from "next"
 
 export default function Home() {
@@ -126,7 +134,11 @@ export default function Home() {
       </div>
 
       <div className="flex w-screen h-screen p-8 z-10">
-        <div className=" w-full h-full mx-auto bg-blue-light"></div>
+        <div className=" w-full h-full mx-auto bg-blue-light">
+          <Marquee baseVelocity={-4} className="py-12" watchVelocity={true} changeDirection={true}>
+            <span className="type-title-s pr-6">Nulla quis turpis suscipit</span>
+          </Marquee>
+        </div>
       </div>
 
       {[...Array(50)].map((_, i) => (
