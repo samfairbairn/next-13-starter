@@ -70,68 +70,65 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col w-screen px-8">
-        {[...Array(2)].map((_, i) => (
-          <SlowBlock key={i} className="first:mb-8 overflow-hidden rounded-3xl">
-            <div className="flex flex-col p-8">
-              <h1 className="type-title-s text-white mb-8">some content</h1>
-              <div className=" columns-3 gap-8">
-                <p className="type-body text-white mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia laoreet
-                  laoreet. Aliquam molestie nibh at orci consequat, nec porta tellus ullamcorper.
-                  Nunc ac diam id nibh commodo suscipit eget eu mi.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet
-                  ullamcorper nisl, in tristique sem. Vestibulum tempus nulla ac pretium
-                  consectetur. Praesent condimentum, purus non ultricies imperdiet, sapien nibh
-                  convallis neque, ac vulputate metus ligula non felis. Proin convallis convallis
-                  lectus vel suscipit.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed augue gravida,
-                  condimentum ipsum ut, tristique velit. Maecenas eget neque efficitur, euismod
-                  turpis non, ornare ex. Integer id pretium felis.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Nunc sollicitudin tellus sed magna convallis dignissim. Vivamus sagittis lectus ac
-                  eros malesuada commodo. Etiam vulputate imperdiet massa, vel convallis leo cursus
-                  in. Praesent maximus, tortor et aliquet euismod, tellus metus pharetra dui, sed
-                  imperdiet felis ipsum nec lectus. Nulla diam turpis, lobortis vel molestie non,
-                  euismod a massa.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Duis vitae urna eu eros pulvinar luctus molestie a nibh. Nunc sollicitudin ornare
-                  mauris, a venenatis mauris lobortis ut. Donec pretium nisl at imperdiet accumsan.
-                  Morbi tempus, tortor vitae aliquam volutpat, sem enim dignissim est, ut euismod
-                  risus lorem eu felis. Duis erat purus, dictum at iaculis lacinia, volutpat sed
-                  eros. Pellentesque ligula elit, mattis id lacus nec, fermentum tempor libero.
-                  Vivamus nec finibus velit.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                  turpis egestas. Donec semper pellentesque purus, a vehicula mi ultrices vel.
-                  Vivamus quis fermentum nisl. Donec dictum scelerisque ipsum ac commodo.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Praesent condimentum congue quam nec lobortis. Ut in lacus quis massa ullamcorper
-                  consequat non eu nulla. Donec imperdiet condimentum eros. Maecenas ante neque,
-                  gravida sed diam sit amet, cursus sollicitudin odio. Quisque mollis magna quis
-                  nulla faucibus, ac euismod ipsum volutpat.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Nulla quis turpis suscipit, mattis metus pretium, venenatis sapien. Quisque
-                  pretium nec lectus ac vehicula. Class aptent taciti sociosqu ad litora torquent
-                  per conubia nostra, per inceptos himenaeos. Nulla sit amet leo fringilla, accumsan
-                  odio sit amet, dictum diam.
-                </p>
-                <p className="type-body text-white mb-4">
-                  Fusce ut dui tempor odio rutrum efficitur. Suspendisse sed eleifend mauris, id
-                  hendrerit sapien.
-                </p>
-              </div>
+        <SlowBlock className="overflow-hidden rounded-3xl">
+          <div className="flex flex-col p-8">
+            <h1 className="type-title-s text-white mb-8">some content</h1>
+            <div className=" columns-3 gap-8">
+              <p className="type-body text-white mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia laoreet
+                laoreet. Aliquam molestie nibh at orci consequat, nec porta tellus ullamcorper. Nunc
+                ac diam id nibh commodo suscipit eget eu mi.
+              </p>
+              <p className="type-body text-white mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet ullamcorper
+                nisl, in tristique sem. Vestibulum tempus nulla ac pretium consectetur. Praesent
+                condimentum, purus non ultricies imperdiet, sapien nibh convallis neque, ac
+                vulputate metus ligula non felis. Proin convallis convallis lectus vel suscipit.
+              </p>
+              <p className="type-body text-white mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed augue gravida,
+                condimentum ipsum ut, tristique velit. Maecenas eget neque efficitur, euismod turpis
+                non, ornare ex. Integer id pretium felis.
+              </p>
+              <p className="type-body text-white mb-4">
+                Nunc sollicitudin tellus sed magna convallis dignissim. Vivamus sagittis lectus ac
+                eros malesuada commodo. Etiam vulputate imperdiet massa, vel convallis leo cursus
+                in. Praesent maximus, tortor et aliquet euismod, tellus metus pharetra dui, sed
+                imperdiet felis ipsum nec lectus. Nulla diam turpis, lobortis vel molestie non,
+                euismod a massa.
+              </p>
+              <p className="type-body text-white mb-4">
+                Duis vitae urna eu eros pulvinar luctus molestie a nibh. Nunc sollicitudin ornare
+                mauris, a venenatis mauris lobortis ut. Donec pretium nisl at imperdiet accumsan.
+                Morbi tempus, tortor vitae aliquam volutpat, sem enim dignissim est, ut euismod
+                risus lorem eu felis. Duis erat purus, dictum at iaculis lacinia, volutpat sed eros.
+                Pellentesque ligula elit, mattis id lacus nec, fermentum tempor libero. Vivamus nec
+                finibus velit.
+              </p>
+              <p className="type-body text-white mb-4">
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                egestas. Donec semper pellentesque purus, a vehicula mi ultrices vel. Vivamus quis
+                fermentum nisl. Donec dictum scelerisque ipsum ac commodo.
+              </p>
+              <p className="type-body text-white mb-4">
+                Praesent condimentum congue quam nec lobortis. Ut in lacus quis massa ullamcorper
+                consequat non eu nulla. Donec imperdiet condimentum eros. Maecenas ante neque,
+                gravida sed diam sit amet, cursus sollicitudin odio. Quisque mollis magna quis nulla
+                faucibus, ac euismod ipsum volutpat.
+              </p>
+              <p className="type-body text-white mb-4">
+                Nulla quis turpis suscipit, mattis metus pretium, venenatis sapien. Quisque pretium
+                nec lectus ac vehicula. Class aptent taciti sociosqu ad litora torquent per conubia
+                nostra, per inceptos himenaeos. Nulla sit amet leo fringilla, accumsan odio sit
+                amet, dictum diam.
+              </p>
+              <p className="type-body text-white mb-4">
+                Fusce ut dui tempor odio rutrum efficitur. Suspendisse sed eleifend mauris, id
+                hendrerit sapien.
+              </p>
             </div>
-          </SlowBlock>
-        ))}
+          </div>
+        </SlowBlock>
       </div>
 
       <div className="flex w-screen h-screen p-8 z-10">
