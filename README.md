@@ -27,5 +27,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - Site manifest/robots/sitemap
 - Default metadata
 - Page transition
-- Additional components: marquee, carousel, image, scrollbar, cursor
-- Typescript components
+- Additional components: image, scrollbar, cursor
