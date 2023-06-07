@@ -47,12 +47,12 @@ export default function Home() {
 
       <div className="flex w-screen mb-8 px-8">
         <div className="flex flex-col w-2/3 pr-8">
-          <div className="flex flex-col justify-center items-center w-full h-[90vh] bg-green-light mb-[5vh]">
+          <div className="flex flex-col justify-center items-center w-full h-[90vh] bg-green-light mb-[5vh] rounded-3xl">
             <SlidingTitle>sliding title</SlidingTitle>
             <SlidingTitle>sliding title</SlidingTitle>
             <SlidingTitle>sliding title</SlidingTitle>
           </div>
-          <div className="w-full h-[90vh] bg-green-light">
+          <div className="w-full h-[90vh] bg-green-light rounded-3xl">
             <ScrollBlock />
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Home() {
           wrapperClass="flex w-1/3"
           className="flex w-full h-[95vh] pt-[5vh] -mt-[5vh]"
         >
-          <div className="flex flex-col items-center justify-center w-full h-[90vh] bg-blue type-body">
+          <div className="flex flex-col items-center justify-center w-full h-[90vh] bg-blue type-body rounded-3xl">
             sticky block
           </div>
         </Sticky>
@@ -70,7 +70,7 @@ export default function Home() {
 
       <div className="flex flex-col w-screen px-8">
         {[...Array(2)].map((_, i) => (
-          <SlowBlock key={i} className="first:mb-8">
+          <SlowBlock key={i} className="first:mb-8 overflow-hidden rounded-3xl">
             <div className="flex flex-col p-8">
               <h1 className="type-title-s text-white mb-8">some content</h1>
               <div className=" columns-3 gap-8">
@@ -134,17 +134,21 @@ export default function Home() {
       </div>
 
       <div className="flex w-screen h-screen p-8 z-10">
-        <div className=" w-full h-full mx-auto bg-blue-light">
+        <div className=" w-full h-full mx-auto bg-blue rounded-3xl">
           <Marquee baseVelocity={-4} className="pt-12" watchVelocity={true} changeDirection={true}>
-            <span className="type-title-s pr-6">Nulla quis turpis suscipit</span>
+            <span className="type-title-s text-green-light pr-6 uppercase">
+              Nulla quis turpis suscipit
+            </span>
           </Marquee>
           <Marquee baseVelocity={2} className="pt-2" watchVelocity={true} changeDirection={true}>
-            <span className="type-title-s pr-6">Nulla quis turpis suscipit</span>
+            <span className="type-title-s text-purple-light pr-6 uppercase">
+              Nulla quis turpis suscipit
+            </span>
           </Marquee>
         </div>
       </div>
 
-      {[...Array(50)].map((_, i) => (
+      {[...Array(100)].map((_, i) => (
         <GSAPBlock
           key={i}
           className={i % 2 === 0 ? "bg-purple-light" : "bg-purple"}

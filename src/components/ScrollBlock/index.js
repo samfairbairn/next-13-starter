@@ -32,10 +32,7 @@ const ScrollBlock = () => {
   )
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center justify-center w-full h-full bg-green type-body"
-    >
+    <div ref={ref} className="flex flex-col items-center justify-center w-full h-full type-body">
       <span>in view progress</span>
       <span>{progress}</span>
     </div>
