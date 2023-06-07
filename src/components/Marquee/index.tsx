@@ -28,13 +28,8 @@ const Marquee = ({
   const [innerRef, bounds] = useMeasure()
   const currentVelocity = useRef(0)
   const directionFactor = useRef(1)
-
-  const intersectionRef = React.useRef(null)
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  })
+  const ref = useRef(null)
+  const intersection = useIntersection(ref, { threshold: 0 })
 
   const repetitions = useMemo(
     () => (windowWidth && bounds.width ? Math.ceil(windowWidth / bounds.width) + 1 : 1),
@@ -72,10 +67,7 @@ const Marquee = ({
   }, [intersection])
 
   return (
-    <div
-      ref={intersectionRef}
-      className={cn("overflow-hidden whitespace-nowrap flex flex-nowrap", className)}
-    >
+    <div ref={ref} className={cn("overflow-hidden whitespace-nowrap flex flex-nowrap", className)}>
       <div
         className="whitespace-nowrap flex flex-nowrap leading-none "
         style={{ transform: `translate3d(${xPos}, 0, 0)` }}
