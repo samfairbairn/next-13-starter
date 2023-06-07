@@ -15,15 +15,15 @@ const SlowBlock = ({ children, className }) => {
       ref.current,
       { y: 0, scale: 1 },
       {
-        y: windowHeight * 0.4,
+        y: windowHeight * 0.5,
         scale: 0.96,
+        ease: "circ.in",
         scrollTrigger: {
           onUpdate: (self) => setProgress(self.progress),
           trigger: ref.current,
-          start: "top -50%", // when the top of the trigger hits the top of the viewport
-          end: `+=100%`, // end after scrolling 500px beyond the start
-          scrub: 0, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-          ease: "power3.inOut",
+          start: "top -25%",
+          end: `+=100%`,
+          scrub: 0,
         },
       },
     )
