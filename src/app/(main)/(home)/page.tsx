@@ -1,4 +1,5 @@
 import {
+  Carousel,
   GSAPBlock,
   Marquee,
   Parallax,
@@ -145,6 +146,15 @@ export default function Home() {
               Nulla quis turpis suscipit
             </span>
           </Marquee>
+          <Marquee baseVelocity={-12} className="pt-2" watchVelocity={true} changeDirection={true}>
+            <span className="flex px-2 gap-2 items-center">
+              <span className=" w-14 h-14 rounded-md bg-green m-2"></span>
+              <span className=" w-14 h-14 rounded-full bg-purple m-2"></span>
+              <span className=" w-14 h-14 rounded-md bg-blue-light m-2 rotate-45 scale-90"></span>
+            </span>
+          </Marquee>
+
+          <Carousel />
         </div>
       </div>
 
