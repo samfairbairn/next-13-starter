@@ -135,7 +135,10 @@ export default function Home() {
 
       <div className="flex w-screen h-screen p-8 z-10">
         <div className=" w-full h-full mx-auto bg-blue-light">
-          <Marquee baseVelocity={-4} className="py-12" watchVelocity={true} changeDirection={true}>
+          <Marquee baseVelocity={-4} className="pt-12" watchVelocity={true} changeDirection={true}>
+            <span className="type-title-s pr-6">Nulla quis turpis suscipit</span>
+          </Marquee>
+          <Marquee baseVelocity={2} className="pt-2" watchVelocity={true} changeDirection={true}>
             <span className="type-title-s pr-6">Nulla quis turpis suscipit</span>
           </Marquee>
         </div>

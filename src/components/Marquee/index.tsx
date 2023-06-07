@@ -5,7 +5,7 @@ import { wrap } from "@/lib/maths"
 import { useLenis } from "@studio-freight/react-lenis"
 import Tempus from "@studio-freight/tempus"
 import React, { ReactNode, useEffect, useMemo, useRef, useState } from "react"
-import { useWindowSize } from "react-use"
+import { useIntersection, useWindowSize } from "react-use"
 import useMeasure from "react-use-measure"
 
 interface IMarquee {
@@ -28,6 +28,13 @@ const Marquee = ({
   const [innerRef, bounds] = useMeasure()
   const currentVelocity = useRef(0)
   const directionFactor = useRef(1)
+
+  const intersectionRef = React.useRef(null)
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  })
 
   const repetitions = useMemo(
     () => (windowWidth && bounds.width ? Math.ceil(windowWidth / bounds.width) + 1 : 1),
@@ -60,15 +67,15 @@ const Marquee = ({
   }, [baseXPos])
 
   useEffect(() => {
-    Tempus.add(onFrame, 0)
-
-    return () => {
-      Tempus.remove(onFrame)
-    }
-  }, [])
+    if (intersection?.isIntersecting) Tempus.add(onFrame, 0)
+    return () => Tempus.remove(onFrame)
+  }, [intersection])
 
   return (
-    <div className={cn("overflow-hidden whitespace-nowrap flex flex-nowrap", className)}>
+    <div
+      ref={intersectionRef}
+      className={cn("overflow-hidden whitespace-nowrap flex flex-nowrap", className)}
+    >
       <div
         className="whitespace-nowrap flex flex-nowrap leading-none "
         style={{ transform: `translate3d(${xPos}, 0, 0)` }}
