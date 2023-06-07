@@ -10,28 +10,28 @@ export default function Home() {
         <Parallax
           speed={-4}
           className="absolute w-16 h-16 top-2/3 right-40 rounded-full bg-black"
-          position="top"
+          top={true}
         >
           <></>
         </Parallax>
         <Parallax
           speed={-2}
           className="absolute w-36 h-36 top-1/4 right-1/3 rounded-full bg-black"
-          position="top"
+          top={true}
         >
           <></>
         </Parallax>
         <Parallax
           speed={-3}
           className="absolute w-24 h-24 top-3/4 left-1/4 rounded-full bg-black"
-          position="top"
+          top={true}
         >
           <></>
         </Parallax>
         <Parallax
           speed={-1}
           className="absolute w-28 h-28 top-1/4 left-24 rounded-full bg-black"
-          position="top"
+          top={true}
         >
           <></>
         </Parallax>
@@ -49,7 +49,6 @@ export default function Home() {
           </div>
         </div>
         <Sticky
-          target={null}
           start={0}
           end={0}
           wrapperClass="flex w-1/3"

@@ -1,7 +1,19 @@
 "use client"
 
 import { gsap } from "gsap"
-import { useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef } from "react"
+
+interface ISticky {
+  children?: ReactNode
+  wrapperClass?: string
+  className?: string
+  start?: number | string
+  end?: number | string
+  target?: string
+  id?: string
+  enabled?: boolean
+  pinType?: "fixed" | "transform"
+}
 
 const Sticky = ({
   children,
@@ -13,10 +25,10 @@ const Sticky = ({
   id = "sticky",
   enabled = true,
   pinType = "fixed",
-}) => {
-  const pinSpacer = useRef()
-  const trigger = useRef()
-  const targetRef = useRef()
+}: ISticky) => {
+  const pinSpacer = useRef<null | HTMLDivElement>(null)
+  const trigger = useRef<null | HTMLDivElement>(null)
+  const targetRef = useRef<null | HTMLElement>(null)
 
   useEffect(() => {
     if (!enabled || !pinSpacer.current || !trigger.current) return
@@ -31,11 +43,11 @@ const Sticky = ({
         trigger: trigger.current,
         scrub: true,
         pin: true,
-        start: `top top+=${parseFloat(start)}px`,
+        start: `top top+=${parseFloat(start as string)}px`,
         end: () => {
-          const targetRefRect = targetRef.current.getBoundingClientRect()
-          const triggerRect = trigger.current.getBoundingClientRect()
-          return `+=${targetRefRect.bottom - triggerRect.bottom + parseFloat(end)}`
+          const targetRefRect = targetRef.current?.getBoundingClientRect()
+          const triggerRect = trigger.current?.getBoundingClientRect()
+          return `+=${targetRefRect!.bottom - triggerRect!.bottom + parseFloat(end as string)}`
         },
         invalidateOnRefresh: true,
       },
@@ -50,7 +62,7 @@ const Sticky = ({
     if (target) {
       targetRef.current = document.querySelector(target)
     } else {
-      targetRef.current = pinSpacer.current.parentNode
+      targetRef.current = pinSpacer.current!.parentNode as HTMLElement
     }
   }, [target])
 

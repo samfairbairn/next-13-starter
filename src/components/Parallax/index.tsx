@@ -1,13 +1,21 @@
 "use client"
 
 import { gsap } from "gsap"
-import { useEffect, useRef } from "react"
+import { ReactNode, useEffect, useRef } from "react"
 import { useWindowSize } from "react-use"
 
-const Parallax = ({ className, children, speed = 1, id = "parallax", position }) => {
-  const trigger = useRef()
-  const target = useRef()
-  const timeline = useRef()
+interface IParallax {
+  children?: ReactNode
+  className?: string
+  speed?: number
+  id?: string
+  top?: boolean
+}
+
+const Parallax = ({ children, className, speed = 1, id = "parallax", top }: IParallax) => {
+  const trigger = useRef<any>()
+  const target = useRef<any>()
+  const timeline = useRef<any>()
   const { width: windowWidth } = useWindowSize()
 
   useEffect(() => {
@@ -18,19 +26,19 @@ const Parallax = ({ className, children, speed = 1, id = "parallax", position })
       .timeline({
         scrollTrigger: {
           id,
-          trigger: position === "top" ? document.body : trigger.current,
+          trigger: top ? document.body : trigger.current,
           scrub: true,
-          start: position === "top" ? "top top" : "top bottom",
-          end: position === "top" ? "+=100%" : "bottom top",
+          start: top ? "top top" : "top bottom",
+          end: top ? "+=100%" : "bottom top",
         },
       })
-      .fromTo(target.current, { y: position === "top" ? 0 : -y }, { y: y, ease: "none" })
+      .fromTo(target.current, { y: top ? 0 : -y }, { y: y, ease: "none" })
 
     mm.add(
       {
         reduceMotion: "(prefers-reduced-motion: reduce)",
       },
-      (context) => {
+      (context: any) => {
         const { reduceMotion } = context.conditions
 
         if (reduceMotion) {
@@ -43,7 +51,7 @@ const Parallax = ({ className, children, speed = 1, id = "parallax", position })
     return () => {
       timeline?.current?.kill()
     }
-  }, [id, speed, position, windowWidth])
+  }, [id, speed, top, windowWidth])
 
   return (
     <div ref={trigger}>
