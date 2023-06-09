@@ -1,3 +1,4 @@
+import { Scene } from "@/components"
 import { Metadata } from "next"
 
 export default function About() {
@@ -13,6 +14,9 @@ export default function About() {
         </div>
       </div>
 
+      <div className="flex items-center justify-center w-screen h-80">
+        <Scene />
+      </div>
       <div className="flex items-center justify-center w-screen h-screen">
         <h2 className={`type-title`}>About</h2>
       </div>
