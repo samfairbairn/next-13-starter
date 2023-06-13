@@ -1,3 +1,4 @@
+import { Link } from "@/components"
 import { Metadata } from "next"
 
 export default function About() {
@@ -14,10 +15,19 @@ export default function About() {
       </div>
 
       <div className="flex items-center justify-center w-screen h-screen">
+        <Link href="/about/#scrollTarget">Scroll to section</Link>
+      </div>
+      <div className="flex items-center justify-center w-screen h-screen">
         <h2 className={`type-title`}>About</h2>
       </div>
       <div className="flex items-center justify-center w-screen h-screen">
         <h2 className={`type-title`}>About</h2>
+      </div>
+      <div className="flex items-center justify-center w-screen h-screen">
+        <h2 className={`type-title`}>About</h2>
+      </div>
+      <div id="scrollTarget" className="flex items-center justify-center w-screen h-screen">
+        <h2 className={`type-title`}>Scroll Here</h2>
       </div>
     </main>
   )
